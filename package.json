@@ -1,10 +1,10 @@
 {
   "name": "naraku-dev-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "none",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"ok": "node publish.js ok"
   },
   "repository": {
     "type": "git",
@@ -13,10 +13,21 @@
   "keywords": [
     "none"
   ],
+  "bin": {
+    "ndt": "./bin/ndt.js"
+  }, 
   "author": "felixgrey",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/felixgrey/naraku-dev-tools/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.0",
+    "@babel/preset-env": "^7.4.4",
+    "naraku": "latest"
   },
   "homepage": "https://github.com/felixgrey/naraku-dev-tools#readme"
 }
