@@ -41,7 +41,7 @@ if(fs.existsSync(_cfgp)) {
 } else if(mode === 'test') {
   config = require(currentPath + '/test.ndt.config.js');
 } else {
-  const _t = fs.readFileSync(preInfo.ndtPath + '/../config/ndt.config.js', 'utf-8');
+  const _t = fs.readFileSync(__dirname + '/../config/ndt.config.js', 'utf-8');
   fs.writeFileSync(_cfgp, _t, 'utf-8');
   config = require(_cfgp);
 }

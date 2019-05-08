@@ -18,7 +18,7 @@ module.exports = {
     toApiListText: (list) => { // 生成的ApiList文件内容
       return 'export default ' + JSON.stringify(list, null, 2) + ';\n';
     },
-    outPath: require(path.resolve(__dirname, './apiList.js')), // ApiList输出地址
+    outPath: path.resolve(__dirname, './apiList.js'), // ApiList输出地址
     convention: {  // 约定规范  
       pageParam: { // 分页相关的参数名称约定
         page: 'page', // 当前页码

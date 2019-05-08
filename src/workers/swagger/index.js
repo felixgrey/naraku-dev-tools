@@ -1,6 +1,7 @@
 const http = require('http');
 const BufferHelper = require('./bufferhelper');
 const fs = require("fs");
+const path = require('path');
 const {COLOR, colorFont, run} = require('naraku/tools');
 
 module.exports = function(config, params, flags, preInfo){
@@ -104,11 +105,12 @@ module.exports = function(config, params, flags, preInfo){
     apiList = toApiListText(apiList);
 
     if(params.apiList !== undefined) {
-      let _outPath = flags.op ? flags.op.value : outPath;
+      let _outPath = flags.op ? flags.op.value : outPath;    
       if(/^\.\//g.test(_outPath)){
-        _outPath = preInfo.currentPath + _outPath;
+        _outPath = path.resolve(preInfo.currentPath, _outPath);
       }
-      //fs.writeFileSync(_outPath, '' + apiList, 'utf-8');     
+      //console.log(_outPath);
+      fs.writeFileSync(_outPath, '' + apiList, 'utf-8');     
     }
     
     const apiTagName = params.tagApi;
