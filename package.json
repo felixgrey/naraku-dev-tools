@@ -21,13 +21,15 @@
   "bugs": {
     "url": "https://github.com/felixgrey/naraku-dev-tools/issues"
   },
+  "dependencies": {
+	"naraku": "latest"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.0",
-    "@babel/preset-env": "^7.4.4",
-    "naraku": "latest"
+    "@babel/preset-env": "^7.4.4"
   },
   "homepage": "https://github.com/felixgrey/naraku-dev-tools#readme"
 }
