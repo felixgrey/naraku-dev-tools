@@ -1,21 +1,21 @@
 {
   "name": "naraku-dev-tools",
-  "version": "0.0.3",
-  "description": "none",
-  "main": "index.js",
+  "version": "0.0.4",
+  "description": "unified entrance for develop tools",
   "scripts": {
-	"ok": "node publish.js ok"
+    "ok": "node publish.js ok"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixgrey/naraku-dev-tools.git"
   },
   "keywords": [
-    "none"
+    "DevelopTools",
+    "naraku"
   ],
   "bin": {
     "ndt": "./bin/ndt.js"
-  }, 
+  },
   "author": "felixgrey",
   "license": "MIT",
   "bugs": {

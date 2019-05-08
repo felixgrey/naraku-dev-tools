@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-'use strict';
-
-console.log("Naraku says Hello World!");
+if (process.env.NODE_ENV === 'develop') {
+  require('../src/index.js');
+} else {
+  require('../lib/index.js');
+}

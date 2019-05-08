@@ -1554,10 +1554,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-naraku@latest:
-  version "0.0.18"
-  resolved "https://registry.npm.taobao.org/naraku/download/naraku-0.0.18.tgz#abdbb5431e0ca86f18bed5f98d111dd45f300b7a"
-  integrity sha1-q9u1Qx4MqG8YvtX5jREd1F8wC3o=
+naraku@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.npm.taobao.org/naraku/download/naraku-0.0.20.tgz#564678a89d4bd37e8f09327c676cd26105e67d74"
+  integrity sha1-VkZ4qJ1L036PCTJ8Z2zSYQXmfXQ=
 
 needle@^2.2.1:
   version "2.3.1"
