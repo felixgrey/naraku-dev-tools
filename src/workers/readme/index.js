@@ -10,15 +10,17 @@ module.exports = function(config, params, flags, preInfo) {
     readmePath
   } = config;
   
-  const server = http.createServer(function (request, response) {
-    response.on('close',() => {
-      setTimeout(() => {
-        server.close();
-      }, 20);
-    });
-    
+  if(!readmePath || !fs.existsSync(readmePath)) {
+    console.log(colorFont('not found readme', COLOR.RED));
+    return;
+  }
+  
+  const server = http.createServer(function (request, response) {   
     response.writeHead(200, {'Content-Type': 'text/html'});
-    response.end(readTextFile(readmePath));
+    response.end(readTextFile(readmePath), () => {
+      console.log("readme has shown on 'http://localhost:8765' , server will close.")
+      server.close();
+    });
   });  
   
   server.listen(8765); 
