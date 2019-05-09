@@ -20,9 +20,16 @@ function writeTextFile(outPath, text) {
   fs.writeFileSync(path.resolve(currentPath, outPath), text, 'utf-8'); 
 }
 
+function jsonStringifyWithDoc(text) {
+  return JSON.stringify(text, null, 2)
+        .replace(/"[_]{3,5}":\s+"\/\*/g,'/*').replace(/\*\/"[,]?/g, '*/')
+        .replace(/\n\s{2,4}\/\*/g, ' /*');
+}
+
 module.exports = {
   readTextFile,
   createMarkdownHTML,
   injectToHtml,
-  writeTextFile
+  writeTextFile,
+  jsonStringifyWithDoc
 };

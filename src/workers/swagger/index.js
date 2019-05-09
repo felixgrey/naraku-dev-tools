@@ -1,5 +1,6 @@
 const http = require('http');
 const BufferHelper = require('../../tools/bufferhelper');
+const {jsonStringifyWithDoc} = require('../../tools');
 const fs = require("fs");
 const path = require('path');
 const {COLOR, colorFont, run} = require('naraku/tools');
@@ -81,7 +82,7 @@ module.exports = function(config, params, flags, preInfo) {
       apiList.push(info);
       
       info.method = post ? 'post' : 'get';  
-      info.url = key;
+      info.apiPath = key;
       info.name = _info.operationId.replace(/UsingGET|UsingPOST/g,'');
       info.description = _info.description || "-";
       info.paramFields = [];
@@ -157,9 +158,7 @@ module.exports = function(config, params, flags, preInfo) {
         }
       });
       
-      let injectConfigString = JSON.stringify(injectConfig, null, 2)
-        .replace(/"[_]{3,5}":\s+"\/\*/g,'/*').replace(/\*\/"[,]?/g, '*/')
-        .replace(/\n\s{2,4}\/\*/g, ' /*');
+      let injectConfigString = jsonStringifyWithDoc(injectConfig);
       injectConfigString = '/* --' + apiTagName + '-- */\n@DataHub.inject(' + injectConfigString + ')\n';
       console.log(colorFont(injectConfigString, COLOR.WATER));
     }

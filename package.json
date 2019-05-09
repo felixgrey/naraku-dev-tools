@@ -1,6 +1,6 @@
 {
   "name": "naraku-dev-tools",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "unified entrance for develop tools",
   "scripts": {
     "ok": "node publish.js ok"
