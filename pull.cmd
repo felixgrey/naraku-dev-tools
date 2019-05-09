@@ -1,1 +1,1 @@
-npm -g install naraku-dev-tools
+npm -g install naraku-dev-tools --registry=https://registry.npmjs.org
