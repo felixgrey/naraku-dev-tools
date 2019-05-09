@@ -1,10 +1,10 @@
 const http = require('http');
-const BufferHelper = require('./bufferhelper');
+const BufferHelper = require('../../tools/bufferhelper');
 const fs = require("fs");
 const path = require('path');
 const {COLOR, colorFont, run} = require('naraku/tools');
 
-module.exports = function(config, params, flags, preInfo){
+module.exports = function(config, params, flags, preInfo) {
   const {
       http: httpParam = {},
       outPath = './apiList.js',
@@ -36,12 +36,12 @@ module.exports = function(config, params, flags, preInfo){
         path: httpParam.path || '/v2/api-docs',
         port: httpParam.port || '8080',
         headers: {
-            'Content-Type': 'application/json',
-            'charset': 'UTF-8'
+          'Content-Type': 'application/json',
+          'charset': 'UTF-8'
         }
       }, function(res) {
         res.on("data", function(chunk){
-            bufferHelper.concat(chunk);
+          bufferHelper.concat(chunk);
         });
         res.on('end', function() {
           const apiData = JSON.parse(bufferHelper.toBuffer().toString('UTF-8'));

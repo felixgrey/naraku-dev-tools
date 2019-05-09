@@ -1,6 +1,12 @@
 var path = require('path');
 
 module.exports = {
+  colorFont: {
+    
+  },
+  readme: {
+    
+  },
   /*
           这个是自带的swagger工具
          支持的功能：
@@ -9,7 +15,7 @@ module.exports = {
   */ 
   swagger: { // swagger工具配置
     // 项目根目录下的apiDocDemo.js文件保存了swaggerDocs返回的接送对象，并且通过module.exports导出
-    localDocs: require(path.resolve(__dirname, './apiDocDemo.js')), // 本地swaggerDocsJson对象,如果有，优先使用
+    // localDocs: require(path.resolve(__dirname, './apiDocDemo.js')), // 本地swaggerDocsJson对象,如果有，优先使用
     http: { //swagger服务器
       host: 'localhost',
       path: '/v2/api-docs',

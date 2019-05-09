@@ -1,6 +1,6 @@
 {
   "name": "naraku-dev-tools",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "unified entrance for develop tools",
   "scripts": {
     "ok": "node publish.js ok"
@@ -22,7 +22,9 @@
     "url": "https://github.com/felixgrey/naraku-dev-tools/issues"
   },
   "dependencies": {
-	"naraku": "latest"
+    "markdown-it": "^8.4.2",
+    "naraku": "latest",
+    "open": "^6.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
