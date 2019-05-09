@@ -16,15 +16,15 @@ if (name !== undefined) {
     const ndtWorkerPath = preInfo.ndtPath + '/workers/' + name;
     if(fs.existsSync(ndtWorkerPath)){
       worker = require(ndtWorkerPath);
-
-      if(typeof worker === 'function') {
-        worker(config, preInfo.params, preInfo.flags, preInfo);
-      } else {
-        console.log(colorFont('worker must be function: ' + name, COLOR.RED));
-      }
     } else {
       console.log(colorFont('unknown worker: ' + name, COLOR.RED));
     }    
+  }
+  
+  if(typeof worker === 'function') {
+    worker(config, preInfo.params, preInfo.flags, preInfo);
+  } else {
+    console.log(colorFont('worker must be function: ' + name, COLOR.RED));
   }
 } else {
   console.log(colorFont('no worker ', COLOR.RED));

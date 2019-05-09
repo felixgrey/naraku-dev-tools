@@ -34,7 +34,7 @@ _params.forEach(p => {
   }
 });
 
-let config = null;
+let config = {};
 const _cfgp = currentPath + '/ndt.config.js';
 if(fs.existsSync(_cfgp)) {
   config = require(_cfgp);

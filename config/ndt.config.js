@@ -1,4 +1,6 @@
 var path = require('path');
+var ndtPath = path.resolve(process.argv[1], '../../');
+ // var someWorker = require(path.resolve(__dirname, './someWorker'));
 
 module.exports = {
   /*
@@ -11,7 +13,7 @@ module.exports = {
    naraku的readme页面，控制台输入 nth readme即可
   */
   readme: { // 页面路径
-    readmePath: path.resolve(process.argv[1], '../../src/workers/readme/readme.html')
+    readmePath: ndtPath +  '/src/workers/readme/readme.html,'
   },
   /*
           这个是自带的swagger工具
