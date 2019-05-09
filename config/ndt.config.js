@@ -1,11 +1,17 @@
 var path = require('path');
 
 module.exports = {
+  /*
+     简单的控制台文字颜色工具 示例
+  */
   colorFont: {
     
   },
-  readme: {
-    
+  /*
+   naraku的readme页面，控制台输入 nth readme即可
+  */
+  readme: { // 页面路径
+    readmePath: path.resolve(process.argv[1], '../../src/workers/readme/readme.html')
   },
   /*
           这个是自带的swagger工具
