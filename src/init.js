@@ -5,7 +5,8 @@ const path = require('path');
 const platform = os.platform();
 const currentPath = process.cwd().replace(/\\/g, '/');
 const mode = process.env.NDT_NODE_ENV;
-const [,,worker,..._params] = Array.from(process.argv);
+const [nodePath, runPath, worker,..._params] = Array.from(process.argv);
+const ndtRunPath = path.resolve(runPath, '../../').replace(/\\/g, '/');
 
 const params = {};
 const flags = {};
@@ -43,12 +44,16 @@ if(fs.existsSync(_cfgp)) {
 } else if (worker === 'init') {
   const _t = fs.readFileSync(__dirname + '/../config/ndt.config.js', 'utf-8');
   fs.writeFileSync(_cfgp, _t, 'utf-8');
+  //console.log(`cp -r ${__dirname}/workers/* ${currentPath}/ndt-workers`)
+  //require('naraku/tools').run(`cp -r ${__dirname}/workers/* ${currentPath}/ndt-workers`);
   config = require(_cfgp);
 }
 
 exports.preInfo = {
+  nodePath,
   currentPath: currentPath,
-  ndtPath: __dirname,
+  ndtRunPath,
+  ndtFilePath: __dirname,
   mode,
   config,
   platform,

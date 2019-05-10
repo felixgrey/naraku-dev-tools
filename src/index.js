@@ -13,7 +13,7 @@ if (name !== undefined) {
   } = config;
   
   if(!worker) {
-    const ndtWorkerPath = preInfo.ndtPath + '/workers/' + name;
+    const ndtWorkerPath = preInfo.ndtFilePath + '/workers/' + name;
     if(fs.existsSync(ndtWorkerPath)){
       worker = require(ndtWorkerPath);
     } else {

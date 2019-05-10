@@ -1,0 +1,5 @@
+rm -R C:\Users\Hp\AppData\Roaming\npm\node_modules\naraku-dev-tools\src
+mkdir C:\Users\Hp\AppData\Roaming\npm\node_modules\naraku-dev-tools\src
+cp -r D:\work\naraku-dev-tools\src\* C:\Users\Hp\AppData\Roaming\npm\node_modules\naraku-dev-tools\src
+
+npm install naraku@latest --registry=https://registry.npmjs.org
