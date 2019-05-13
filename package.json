@@ -3,7 +3,8 @@
   "version": "0.0.18",
   "description": "unified entrance for develop tools",
   "scripts": {
-    "ok": "node publish.js ok"
+    "ok": "node publish.js ok",
+    "push-git": "node publish.js git"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   },
   "dependencies": {
     "markdown-it": "^8.4.2",
-    "naraku": "latest",
+    "naraku": "0.0.28",
     "open": "^6.2.0"
   },
   "devDependencies": {

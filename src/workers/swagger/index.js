@@ -1,6 +1,6 @@
 const http = require('http');
 const BufferHelper = require('../../tools/bufferhelper');
-const {jsonStringifyWithDoc} = require('../../tools');
+const {jsonStringifyWithDoc, upperCase0} = require('../../tools');
 const fs = require("fs");
 const path = require('path');
 const {COLOR, colorFont, run} = require('naraku/tools');
@@ -130,12 +130,12 @@ module.exports = function(config, params, flags, preInfo) {
         
         const dataConfig = {
           ___: '/* ' + description + ' */',
-          type: method + name.replace(/^[a-z]{1}/, a => a.toUpperCase()),
+          type: method + upperCase0(name),
         };
         injectConfig[name] = dataConfig;
         
         if(dependence) {
-          const depName = name + 'BusiDep';
+          const depName = 'selected' + upperCase0(name);
           dataConfig.dependence = dataConfig.dependence || [];
           dataConfig.dependence.push(depName);
           injectConfig[depName] = {

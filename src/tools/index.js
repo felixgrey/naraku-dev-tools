@@ -26,7 +26,12 @@ function jsonStringifyWithDoc(text) {
         .replace(/\n\s{2,4}\/\*/g, ' /*');
 }
 
+function upperCase0(text = '') {
+  return `${text}`.replace(/^[a-z]{1}/, a => a.toUpperCase());
+}
+
 module.exports = {
+  upperCase0,
   readTextFile,
   createMarkdownHTML,
   injectToHtml,
