@@ -1,6 +1,6 @@
 {
   "name": "naraku-dev-tools",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "unified entrance for develop tools",
   "scripts": {
     "ok": "node publish.js ok",
@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "markdown-it": "^8.4.2",
-    "naraku": "latest",
     "open": "^6.2.0"
   },
   "devDependencies": {

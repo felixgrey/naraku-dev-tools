@@ -1,34 +1,21 @@
 var path = require('path');
 var ndtPath = path.resolve(process.argv[1], '../../');
-const {COLOR, colorFont, run, runList} = require('naraku/tools');
 
- // var someWorker = require(path.resolve(__dirname, './someWorker'));
-
+// var someWorker = require(path.resolve(__dirname, './someWorker'));
 
 module.exports = {
-  /*
-     简单的控制台文字颜色工具 示例
-  */
-  colorFont: {
-    
-  },
   install:{
-    worker: (config, params, flags, preInfo) => {
-      // 网络不好，分别执行，避免卡死……
+    worker: (config, params, flags, preInfo, {runList}) => {
+      // 分别执行，避免卡死……
       runList([
-        'npm install naraku@latest --save',
-        'npm install gulp --save-dev',
-        'npm install del --save-dev',
-        'npm install gulp-rename --save-dev',
-        'npm install vinyl-paths --save-dev',
-        'npm install readable-stream/transform --save-dev',
+        'npm install gulp',
         'npm install gulp -g'
       ]);
     }
   },
   ok: {
-    worker:(config, params, flags, preInfo) => {
-      const now = new Date().toString().replace(/\s+/g,'-');
+    worker:(config, params, flags, preInfo, {runList}) => {
+      const now = new Date().toString().replace(/\s+/g, '-');
       runList([
         'gulp',
         'git stash save "stash-'+now+'"',

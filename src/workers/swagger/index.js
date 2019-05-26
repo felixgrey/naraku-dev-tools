@@ -1,11 +1,9 @@
 const http = require('http');
 const BufferHelper = require('../../tools/bufferhelper');
-const {jsonStringifyWithDoc, upperCase0} = require('../../tools');
 const fs = require("fs");
 const path = require('path');
-const {COLOR, colorFont, run} = require('naraku/tools');
 
-module.exports = function(config, params, flags, preInfo) {
+module.exports = function(config, params, flags, preInfo, {jsonStringifyWithDoc, upperCase0, COLOR, colorFont, run}) {
   const {
       http: httpParam = {},
       outPath = './apiList.js',

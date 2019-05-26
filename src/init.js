@@ -6,7 +6,7 @@ const platform = os.platform();
 const currentPath = process.cwd().replace(/\\/g, '/');
 const mode = process.env.NDT_NODE_ENV;
 const [nodePath, runPath, worker,..._params] = Array.from(process.argv);
-const ndtRunPath = path.resolve(runPath, '../../').replace(/\\/g, '/');
+const ndtRunPath = path.resolve(runPath, '../').replace(/\\/g, '/');
 
 const params = {};
 const flags = {};
@@ -39,18 +39,17 @@ let config = {};
 const _cfgp = currentPath + '/ndt.config.js';
 const _gulp = currentPath + '/gulpfile.js';
 if (!fs.existsSync(_gulp)) {
-  const _t = fs.readFileSync(__dirname + '/../../config/gulpfile.js', 'utf-8');
+  const _t = fs.readFileSync(__dirname + '/../config/gulpfile.js', 'utf-8');
   fs.writeFileSync(_gulp, _t, 'utf-8');
 }
 if(fs.existsSync(_cfgp)) {
   config = require(_cfgp);
 } else if(mode === 'test') {
-  config = require(currentPath + '/test.ndt.config.js');
+  config = require(__dirname + '/test.ndt.config.js');
 } else if (worker === 'init') {
-  const _t = fs.readFileSync(__dirname + '/../../config/ndt.config.js', 'utf-8');
+  const _t = fs.readFileSync(__dirname + '/../config/ndt.config.js', 'utf-8');
   fs.writeFileSync(_cfgp, _t, 'utf-8');
   //console.log(`cp -r ${__dirname}/workers/* ${currentPath}/ndt-workers`)
-  //require('naraku/tools').run(`cp -r ${__dirname}/workers/* ${currentPath}/ndt-workers`);
   config = require(_cfgp);
 }
 
