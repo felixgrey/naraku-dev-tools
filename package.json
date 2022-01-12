@@ -23,7 +23,7 @@
     "url": "https://github.com/felixgrey/naraku-dev-tools/issues"
   },
   "dependencies": {
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "open": "^6.2.0"
   },
   "devDependencies": {
